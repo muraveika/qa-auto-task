@@ -20,7 +20,7 @@
 
 1. Склонировать репозиторий
 ```
-git clone https://github.com/muraveika/alfa-bank-challenge.git
+git clone https://github.com/muraveika/qa-auto-task.git
 ```
 2. Установить зависимости
 ```
