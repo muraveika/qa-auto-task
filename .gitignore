@@ -1,0 +1,28 @@
+*.log
+logs
+tmp
+
+# API keys and secrets
+.env
+
+# Dependency directory
+node_modules
+
+# Editors
+.vscode
+.idea
+.run
+*.iml
+
+# OS metadata
+.DS_Store
+Thumbs.db
+
+# Playwright
+/playwright-report/
+/playwright/.cache/
+/test-results/
+
+# Allure
+/allure-report/
+/allure-results/
