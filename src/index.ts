@@ -20,9 +20,9 @@ async function main() {
   const outputTestCaseWithValuesFilePath = args[2] ?? FILE_PATHS.OUTPUT_RESULTS;
 
   try {
-    const [testcaseStructure, isValidTestCase] =
+    const [testCase, isValidTestCase] =
       FileService.readJSON<TestCase>(inputTestCaseFilePath, FormatValidator.isValidTestCase);
-    const [valuesFile, isValidInputTestCaseValues] =
+    const [inputTestCaseValues, isValidInputTestCaseValues] =
       FileService.readJSON<InputTestCaseValues>(
         inputTestCaseValuesFilePath,
         FormatValidator.isValidInputTestCaseValues
@@ -32,7 +32,7 @@ async function main() {
       ErrorHandler.handleInvalidInputError();
       console.error('Error occurs. Check output file.');
     } else {
-      const result = processTestCase(testcaseStructure, valuesFile);
+      const result = processTestCase(testCase, inputTestCaseValues);
 
       FileService.writeJSON<TestCase>(outputTestCaseWithValuesFilePath, result);
       console.log('Processing complete. Check output file.');
